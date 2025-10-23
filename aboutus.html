@@ -129,7 +129,7 @@
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="product1.html">Product</a></li>
           <li class="nav-item"><a class="nav-link" href="#">COA</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
         </ul>
@@ -220,44 +220,170 @@
   </div>
 </section>
 
-<!-- ====== MEET OUR LEADERSHIP SECTION ====== -->
-<section class="py-5 bg-light" id="leadership" style="font-family:'Poppins', sans-serif;">
+
+<!-- ====== OUR TEAM SECTION (FIXED IMAGE SIZE) ====== -->
+<section id="our-team" class="py-5" style="font-family:'Poppins',sans-serif; background:linear-gradient(180deg,#f8faff 0%,#ffffff 100%);">
   <div class="container" data-aos="fade-up">
 
-    <!-- Section Header -->
+    <!-- Section Title -->
     <div class="text-center mb-5">
+      <h2 class="fw-bold display-6" style="color:#004990;">Our <span style="color:#FFC72C;">Team</span></h2>
+      <div class="mx-auto mt-3" style="width:90px; height:3px; background-color:#FFC72C; border-radius:2px;"></div>
+      <p class="text-muted mt-3">The people who drive Valorol’s innovation, integrity, and excellence.</p>
+    </div>
+
+    <!-- Team Members -->
+    <div class="row g-5">
+
+      <!-- Member 1 -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/RUPESH.jpeg" alt="Team Member 1">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Rakesh Sharma</h5>
+            <p class="text-muted mb-2 fw-semibold">Managing Director</p>
+            <p class="small text-secondary mb-0">
+              With over 20 years in the chemical industry, he leads Valorol’s strategic vision and global expansion.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/fahad 1.jpg" alt="Team Member 2">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Ms. Priya Nair</h5>
+            <p class="text-muted mb-2 fw-semibold">Head of Operations</p>
+            <p class="small text-secondary mb-0">
+              Ensuring seamless manufacturing and logistics with a focus on safety, quality, and sustainability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/adnan.jpeg" alt="Team Member 3">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Arjun Patel</h5>
+            <p class="text-muted mb-2 fw-semibold">R&D Lead Scientist</p>
+            <p class="small text-secondary mb-0">
+              Driving innovation through advanced chemical formulations and precision process optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/azr.jpeg" alt="Team Member 4">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Ms. Neha Deshmukh</h5>
+            <p class="text-muted mb-2 fw-semibold">Quality Assurance Manager</p>
+            <p class="small text-secondary mb-0">
+              Overseeing every batch to ensure unmatched purity and compliance with BP and USP standards.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Custom Styles -->
+  <style>
+    .team-card {
+      transition: all 0.4s ease;
+      border: 1px solid transparent;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: #FFC72C;
+      box-shadow: 0 8px 25px rgba(0, 73, 144, 0.15);
+    }
+    .team-img {
+      width: 160px;
+      height: 160px;
+      flex-shrink: 0;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 15px;
+      transition: transform 0.4s ease;
+    }
+    .team-card:hover .team-img img {
+      transform: scale(1.08);
+    }
+    @media (max-width: 768px) {
+      .team-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .team-img {
+        margin-bottom: 15px;
+        margin-right: 0 !important;
+      }
+    }
+  </style>
+
+
+</section>
+
+<!-- ====== MEET OUR LEADERSHIP SECTION ====== -->
+<!-- <section class="py-5 bg-light" id="leadership" style="font-family:'Poppins', sans-serif;">
+  <div class="container" data-aos="fade-up"> -->
+
+    <!-- Section Header -->
+    <!-- <div class="text-center mb-5">
       <h2 class="fw-bold display-6" style="color:#004990;">
         Meet Our <span style="color:#FFC72C;">Leadership</span>
-      </h2>
+      </h2> -->
 
       <!-- small underline -->
-      <div style="width:120px; height:4px; background:#004990; margin:10px auto 20px; border-radius:2px;"></div>
+      <!-- <div style="width:120px; height:4px; background:#004990; margin:10px auto 20px; border-radius:2px;"></div>
 
       <p class="text-secondary fs-5 fst-italic">
         Visionaries driving Valorol™ — where science, sustainability, and trust converge.
       </p>
     </div>
 
-    <div class="row align-items-center">
+    <div class="row align-items-center"> -->
       
       <!-- Left Column: Portrait -->
-      <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-right">
+      <!-- <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-right">
   <img src="images/RUPESH.jpeg" 
        class="img-fluid shadow-lg rounded-4 border border-3"
        style="border-color:#000000 !important; border-style:solid; width:85%; max-width:300px; transition:0.4s ease; box-shadow:0 8px 25px rgba(0,0,0,0.35);"
        alt="Leadership Portrait">
-</div>
+</div> -->
 
 
       <!-- Right Column: Bio -->
-      <div class="col-md-8" data-aos="fade-left">
+      <!-- <div class="col-md-8" data-aos="fade-left">
         <p><strong>Leadership Vision:</strong> Empowering industries through innovation, purity, and sustainable chemical solutions that redefine quality standards globally.</p>
         <p><strong>Our Journey:</strong> Under the leadership of <strong>Cognizant Chemical Pvt. Ltd.</strong>, Valorol™ continues to pioneer excellence in high-purity solvent manufacturing — driven by science and guided by integrity.</p>
         <p><strong>Commitment to Growth:</strong> With decades of expertise, our leadership focuses on expanding Valorol’s reach to global markets, ensuring compliance, innovation, and long-term sustainability in every batch we produce.</p>
-        <p><strong>Our Philosophy:</strong> "Building a cleaner, safer, and sustainable tomorrow — one molecule at a time."</p>
+        <p><strong>Our Philosophy:</strong> "Building a cleaner, safer, and sustainable tomorrow — one molecule at a time."</p> -->
 
         <!-- Milestone Cards -->
-        <div class="row mt-4 g-3 justify-content-center">
+        <!-- <div class="row mt-4 g-3 justify-content-center">
           <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card shadow-sm h-100 text-center border-2" style="border-color:#004990;">
               <div class="card-body py-3 px-2">
@@ -290,7 +416,7 @@
     </div>
 
   </div>
-</section>
+</section> -->
 
 <!-- ====== OUR VISION & MISSION SECTION ====== -->
 <section class="py-5" style="background:linear-gradient(135deg, #f8f9fa 0%, #eaf3ff 100%); font-family:'Poppins', sans-serif;">
@@ -521,16 +647,7 @@
   });
 </script>
 
-<!-- CDN Links -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-
-<!-- CDN Links -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
 
 
@@ -548,15 +665,7 @@
   });
 </script>
 
-<!-- ====== AOS & Bootstrap ====== -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration:900, once:true });
-</script>
+
 
 
 
