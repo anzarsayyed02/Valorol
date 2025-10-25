@@ -110,8 +110,8 @@
 
 <body>
 
-    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top animate_animated animate_fadeInDown">
   <div class="container">
     <a class="navbar-brand" href="index.html">
       <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
@@ -123,7 +123,20 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="product1.html">Product</a></li>
+
+        <!-- Product Dropdown -->
+        <li class="nav-item dropdown hover-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown">
+            Product
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productDropdown">
+            <li><a class="dropdown-item" href="product1.html">Acetone</a></li>
+            <li><a class="dropdown-item" href="product2.html">Methanol</a></li>
+            <li><a class="dropdown-item" href="product3.html">Dichloromethane</a></li>
+            <li><a class="dropdown-item" href="product4.html">Isopropyl Alcohol</a></li>
+          </ul>
+        </li>
+
         <li class="nav-item"><a class="nav-link" href="#">COA</a></li>
         <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
       </ul>
@@ -134,17 +147,29 @@
 <br>
 
   <!-- 🌐 Header Section -->
-<section id="about-hero" 
-         class="position-relative text-center d-flex align-items-center justify-content-center"
-         style="background:linear-gradient(rgba(0,73,144,0.6),rgba(0,73,144,0.6)),
-                url('images/inside5.jpeg') 
-                center/cover no-repeat;
-                height:70vh; color:white; font-family:'Poppins',sans-serif;">
-  <div class="container" data-aos="fade-up">
-    
+<section id="about-hero"
+         class="position-relative text-center d-flex align-items-center justify-content-center overflow-hidden"
+         style="height:70vh; color:white; font-family:'Poppins',sans-serif;
+                /* keep a fallback background image in case video fails */
+                background: linear-gradient(rgba(0,73,144,0.6), rgba(0,73,144,0.6)),
+                             center/cover no-repeat;">
+  <!-- Background video (absolute, covers container) -->
+  <video autoplay muted loop playsinline 
+         class="position-absolute top-0 start-0 w-100 h-100" style="object-fit:cover; z-index:0;">
+    <source src="images/6.mp4" type="video/mp4">
+    <!-- optional webm fallback -->
+    <!-- <source src="videos/valorol-hero.webm" type="video/webm"> -->
+    <!-- fallback text -->
+  </video>
+
+  <!-- Dark overlay for readability -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,73,144,0.55); z-index:1;"></div>
+
+  <!-- Content (on-top) -->
+  <div class="container position-relative" data-aos="fade-up" style="z-index:2;">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-3">
-      <ol class="breadcrumb justify-content-center mb-0">
+      <ol class="breadcrumb justify-content-center mb-0" style="background:transparent;">
         <li class="breadcrumb-item"><a href="index.html" class="text-light text-decoration-none">Home</a></li>
         <li class="breadcrumb-item active text-warning" aria-current="page">COA</li>
       </ol>
@@ -152,16 +177,16 @@
 
     <!-- Hero Content -->
     <h1 class="display-5 fw-bold mb-2">Product <span style="color:#FFC72C;">COA</span></h1>
-    <p class="lead mb-0 fw-light">Get product COA</p>
-
+    <p class="lead mb-0 fw-light">Get a product COA</p>
   </div>
 
-  <!-- Subtle Overlay Effect -->
+  <!-- Bottom fade (keeps transition to next section smooth) -->
   <div class="position-absolute bottom-0 start-0 w-100" 
-       style="height:100px; background:linear-gradient(to top,rgba(255,255,255,0.95),transparent);">
+       style="height:100px; background:linear-gradient(to top,rgba(255,255,255,0.95),transparent); z-index:1;">
   </div>
 </section>
-
+<br><br><br>
+    <h1 class="display-5 fw-bold mb-2" style="text-align: center;">Search product </h1>
   <!-- 🔍 Search Bar + View Toggle -->
   <section class="py-5" style="background-color:#f8f9fa;">
     <div class="container" data-aos="fade-up" data-aos-duration="800">
@@ -203,10 +228,13 @@
 AOS.init();
 
 const coaData = [
-  { product: "Ethylene Glycol", batch: "B101", code: "EG-101", date: "2025-03-10", file: "1.pdf" },
-  { product: "Polypropylene", batch: "B202", code: "PP-202", date: "2025-04-05", file: "COA_Polypropylene_B202.pdf" },
-  { product: "Isopropyl Alcohol", batch: "B305", code: "IPA-305", date: "2025-02-22", file: "COA_IsopropylAlcohol_B305.pdf" },
-  { product: "Methanol", batch: "B118", code: "MT-118", date: "2025-01-15", file: "COA_Methanol_B118.pdf" }
+  { product: "Acetone BP", batch: "BF2507003", code: "C40002", file: "F2507003 Acetone BP.pdf" },
+  { product: "MDC EP BP", batch: "F2509002", code: "C40009",  file: "F2509002 MDC EP-BP.pdf" },
+  { product: "Methanol NF", batch: "F2509003", code: "C40005", file: "F2509003 Methanol_NF.pdf" },
+  { product: "MDC Multi", batch: "F2509004", code: "C40010",  file: "F2509004 MDC Multi.pdf" },
+  { product: "Acetone Multi", batch: "F2509006", code: "C40010",  file: "F2509006 Acetone_Multi.pdf" },
+  { product: "Methanol Multi", batch: "RM2507009", code: "C40007",  file: "RM2507009 Methanol_Multi.pdf" }
+
 ];
 
 const coaContainer = document.getElementById('coaList');
@@ -245,7 +273,6 @@ if (currentView === 'grid') {
               <p class="small text-muted mb-3">
                 <strong>Batch:</strong> ${item.batch}<br>
                 <strong>Code:</strong> ${item.code}<br>
-                <strong>Date:</strong> ${item.date}
               </p>
               <div class="d-flex justify-content-center gap-2">
                 <a href="assets/coa/${item.file}" target="_blank" 
@@ -281,8 +308,7 @@ if (currentView === 'grid') {
             <h5 class="fw-semibold text-dark mb-1">${item.product}</h5>
             <small class="text-muted">
               <strong>Batch:</strong> ${item.batch} | 
-              <strong>Code:</strong> ${item.code} | 
-              <strong>Date:</strong> ${item.date}
+              <strong>Code:</strong> ${item.code} 
             </small>
           </div>
           <div class="d-flex gap-2">
@@ -392,11 +418,11 @@ document.getElementById('listViewBtn').addEventListener('click', () => {
       <div class="col-lg-2 col-md-6">
         <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Quick Links</h5>
         <ul class="list-unstyled mb-0 small">
-          <li><a href="#about" class="footer-link">About Us</a></li>
-          <li><a href="#products" class="footer-link">Products</a></li>
-          <li><a href="#industries" class="footer-link">Industries</a></li>
-          <li><a href="#innovation" class="footer-link">R&D</a></li>
-          <li><a href="#contact" class="footer-link">Contact</a></li>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="aboutus.html" class="footer-link">About Us</a></li>
+          <li><a href="#products" class="footer-link">Product</a></li>
+          <li><a href="COA.html" class="footer-link">COA</a></li>
+          <li><a href="contactus.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
 
@@ -404,20 +430,18 @@ document.getElementById('listViewBtn').addEventListener('click', () => {
       <div class="col-lg-3 col-md-6">
         <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Our Products</h5>
         <ul class="list-unstyled mb-0 small">
-          <li><a href="#" class="footer-link">Pharma Grade Solvents</a></li>
-          <li><a href="#" class="footer-link">Agrochemical Solvents</a></li>
-          <li><a href="#" class="footer-link">Cosmetic Grade Solvents</a></li>
-          <li><a href="#" class="footer-link">Industrial Solutions</a></li>
+          <li><a class="footer-link" href="product1.html">Acetone</a></li>
+          <li><a class="footer-link" href="product2.html">Methanol</a></li>
+          <li><a class="footer-link" href="product3.html">Dichloromethane</a></li>
+          <li><a class="footer-link" href="product4.html">Isopropyl Alcohol</a></li>
         </ul>
       </div>
-
       <!-- Contact Info -->
       <div class="col-lg-3 col-md-6">
         <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Contact Us</h5>
-        <p class="mb-1 small"><i class="fas fa-map-marker-alt me-2 text-warning"></i> MIDC Industrial Area, Maharashtra,
-          India</p>
-        <p class="mb-1 small"><i class="fas fa-envelope me-2 text-warning"></i> info@valorol.in</p>
-        <p class="small"><i class="fas fa-phone me-2 text-warning"></i> +91 98765 43210</p>
+        <p class="mb-1 small"><i class="fas fa-map-marker-alt me-2 text-warning"></i> B-120, Disma Office Premises, Steel Market, Kalamboli, Navi Mumbai-410218</p>
+        <p class="mb-1 small"><i class="fas fa-envelope me-2 text-warning"></i> admin@valorol.com</p>
+        <p class="small"><i class="fas fa-phone me-2 text-warning"></i> +91 9619662255   /   +91 9930272227</p>
       </div>
 
     </div>
