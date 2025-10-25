@@ -45,7 +45,7 @@
   html, body { overflow-x: hidden; }
   * { box-sizing: border-box; }
 
-    /* Navbar Styling */
+       /* Navbar Styling */
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
@@ -92,6 +92,21 @@
     .navbar-toggler:focus {
       box-shadow: none;
     }
+    /* Dropdown items styling */
+.dropdown-item {
+  color: #004C8C; /* default text color same as nav-link */
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.dropdown-item:hover {
+  color: #FFB400; /* yellow on hover */
+  transform: translateY(-2px);
+}
+
+/* Agar navbar dark mode ya scrolled hai */
+.navbar.scrolled .dropdown-item:hover {
+  color: #FFB400;
+}
 
     /* hero section code */
     .hero-section {
@@ -249,25 +264,48 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="product1.html">Product</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">COA</a></li>
-          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="product1.html">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="COA.html">COA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- CSS for hover -->
+<style>
+  /* Hover dropdown only for desktop */
+  @media (min-width: 992px) {
+    .hover-dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+  }
+</style>
+<!-- Custom JS for hover dropdown -->
+<script>
+  const dropdown = document.getElementById('productDropdownHover');
+  dropdown.addEventListener('mouseenter', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.show();
+  });
+  dropdown.addEventListener('mouseleave', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.hide();
+  });
+</script>
   <!-- Hero Section -->
   <!-- Hero Section -->
   <section id="hero" class="hero-section position-relative d-flex align-items-center justify-content-center text-white">
@@ -277,16 +315,16 @@
       data-bs-interval="4000">
       <div class="carousel-inner h-100">
         <div class="carousel-item active">
-          <img src="images/12.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 1">
+          <img src="images/11.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 1">
         </div>
         <div class="carousel-item">
-          <img src="images/bg2.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 2">
+          <img src="images/10.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 2">
         </div>
         <div class="carousel-item">
-          <img src="images/bg3.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 3">
+          <img src="images/12.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 3">
         </div>
         <div class="carousel-item">
-          <img src="images/bg4.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 4">
+          <img src="images/7.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Slide 4">
         </div>
       </div>
     </div>
@@ -824,7 +862,7 @@
 
       <!-- Right: Image -->
       <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="200">
-        <img src="images/fact.avif" alt="Sustainability and Certifications"
+        <img src="images/1.jpg" alt="Sustainability and Certifications"
           class="img-fluid rounded-4 shadow border border-2" style="max-height:420px; object-fit:cover;">
       </div>
     </div>
@@ -855,7 +893,7 @@
       <!-- Left: Image/Video -->
       <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="100">
         <!-- Replace image with video if needed -->
-        <img src="images/bg3.jpg" class="img-fluid rounded-4 shadow border border-2"
+        <img src="images/inside5.jpeg" class="img-fluid rounded-4 shadow border border-2"
           alt="Chemical Manufacturing Facility">
       </div>
 

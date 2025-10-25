@@ -38,92 +38,122 @@
     <!-- ✅ Magnific Popup -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Navbar Styling */
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+      transition: all 0.3s ease;
+    }
 
-        html,
-        body {
-            overflow-x: hidden;
-        }
+    .navbar.scrolled {
+      /* dark blue */
+      transition: all 0.3s ease;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    .navbar-brand img {
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
 
-        /* Navbar Styling */
-        .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-            transition: all 0.3s ease;
-        }
+    .navbar-brand img:hover {
+      transform: scale(1.08);
+    }
 
-        .navbar.scrolled {
-            /* dark blue */
-            transition: all 0.3s ease;
-        }
+    .nav-link {
+      color: #004C8C;
+      font-weight: 500;
+      margin: 0 20px;
+      transition: color 0.3s ease, transform 0.2s;
+    }
 
-        .navbar-brand img {
-            height: 60px;
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-brand img:hover {
-            transform: scale(1.08);
-        }
-
-        .nav-link {
-            color: #004C8C;
-            font-weight: 500;
-            margin: 0 20px;
-            transition: color 0.3s ease, transform 0.2s;
-        }
-
-        .nav-link:hover {
-            color: #FFB400;
-            /* yellow accent */
-            transform: translateY(-2px);
-        }
+    .nav-link:hover {
+      color: #FFB400;
+      /* yellow accent */
+      transform: translateY(-2px);
+    }
 
 
-        .navbar.scrolled .nav-link:hover {
-            color: #FFB400;
-        }
+    .navbar.scrolled .nav-link:hover {
+      color: #FFB400;
+    }
 
-        /* Mobile menu */
-        .navbar-toggler {
-            border: none;
-        }
+    /* Mobile menu */
+    .navbar-toggler {
+      border: none;
+    }
 
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-    </style>
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    /* Dropdown items styling */
+.dropdown-item {
+  color: #004C8C; /* default text color same as nav-link */
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.dropdown-item:hover {
+  color: #FFB400; /* yellow on hover */
+  transform: translateY(-2px);
+}
+
+/* Agar navbar dark mode ya scrolled hai */
+.navbar.scrolled .dropdown-item:hover {
+  color: #FFB400;
+}
+
+</style>
 
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">COA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="COA.html">COA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CSS for hover -->
+<style>
+  /* Hover dropdown only for desktop */
+  @media (min-width: 992px) {
+    .hover-dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+  }
+</style>
+<!-- Custom JS for hover dropdown -->
+<script>
+  const dropdown = document.getElementById('productDropdownHover');
+  dropdown.addEventListener('mouseenter', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.show();
+  });
+  dropdown.addEventListener('mouseleave', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.hide();
+  });
+</script>
     <!-- ====== PRODUCT HERO SECTION (PREMIUM DESIGN) ====== -->
     <!-- ====== PRODUCT HERO SECTION (CLEAN CENTERED) ====== -->
     <section id="product-hero"

@@ -90,6 +90,21 @@
     .navbar-toggler:focus {
       box-shadow: none;
     }
+    /* Dropdown items styling */
+.dropdown-item {
+  color: #004C8C; /* default text color same as nav-link */
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.dropdown-item:hover {
+  color: #FFB400; /* yellow on hover */
+  transform: translateY(-2px);
+}
+
+/* Agar navbar dark mode ya scrolled hai */
+.navbar.scrolled .dropdown-item:hover {
+  color: #FFB400;
+}
 
     /* Ensure all media (images/videos) have same height and cover */
   .gallery-item .card {
@@ -117,31 +132,54 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="product1.html">Product</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">COA</a></li>
-          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="product1.html">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="COA.html">COA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- CSS for hover -->
+<style>
+  /* Hover dropdown only for desktop */
+  @media (min-width: 992px) {
+    .hover-dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+  }
+</style>
+<!-- Custom JS for hover dropdown -->
+<script>
+  const dropdown = document.getElementById('productDropdownHover');
+  dropdown.addEventListener('mouseenter', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.show();
+  });
+  dropdown.addEventListener('mouseleave', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.hide();
+  });
+</script>
 
 <!-- ====== ABOUT HERO SECTION ====== -->
 <section id="about-hero" 
          class="position-relative text-center d-flex align-items-center justify-content-center"
          style="background:linear-gradient(rgba(0,73,144,0.6),rgba(0,73,144,0.6)),
-                url('images/bg1.jpg') 
+                url('images/6.avif') 
                 center/cover no-repeat;
                 height:70vh; color:white; font-family:'Poppins',sans-serif;">
   <div class="container" data-aos="fade-up">
@@ -173,7 +211,7 @@
 
       <!-- Left: Image -->
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-        <img src="images/bg3.jpg"
+        <img src="images/inside4.jpeg"
              class="img-fluid rounded-4 shadow-lg"
              alt="Cognizant Chemical Pvt. Ltd. Factory">
       </div>
@@ -239,11 +277,11 @@
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
         <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
           <div class="team-img me-4">
-            <img src="images/RUPESH.jpeg" alt="Team Member 1">
+            <img src="images/Sir.jpeg" alt="Team Member 1">
           </div>
           <div>
-            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Rakesh Sharma</h5>
-            <p class="text-muted mb-2 fw-semibold">Managing Director</p>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Venkatesh Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">CEO/Directorr</p>
             <p class="small text-secondary mb-0">
               With over 20 years in the chemical industry, he leads Valorol’s strategic vision and global expansion.
             </p>
@@ -255,11 +293,11 @@
       <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
         <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
           <div class="team-img me-4">
-            <img src="images/fahad 1.jpg" alt="Team Member 2">
+            <img src="images/rupesh.jpeg" alt="Team Member 2">
           </div>
           <div>
-            <h5 class="fw-bold mb-1" style="color:#004990;">Ms. Priya Nair</h5>
-            <p class="text-muted mb-2 fw-semibold">Head of Operations</p>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Rupesh Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">Managing Director</p>
             <p class="small text-secondary mb-0">
               Ensuring seamless manufacturing and logistics with a focus on safety, quality, and sustainability.
             </p>
@@ -271,13 +309,45 @@
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
         <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
           <div class="team-img me-4">
-            <img src="images/adnan.jpeg" alt="Team Member 3">
+            <img src="images/Pravin.jpeg" alt="Team Member 3">
           </div>
           <div>
-            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Arjun Patel</h5>
-            <p class="text-muted mb-2 fw-semibold">R&D Lead Scientist</p>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Pravin Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">---</p>
             <p class="small text-secondary mb-0">
               Driving innovation through advanced chemical formulations and precision process optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/Arjavi.jpeg" alt="Team Member 4">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mrs. Aarjavi Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">Sales Head</p>
+            <p class="small text-secondary mb-0">
+              Overseeing every batch to ensure unmatched purity and compliance with BP and USP standards.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/adnan.jpeg" alt="Team Member 4">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mrs. Sayyed Adnan</h5>
+            <p class="text-muted mb-2 fw-semibold">IT Support</p>
+            <p class="small text-secondary mb-0">
+              Overseeing every batch to ensure unmatched purity and compliance with BP and USP standards.
             </p>
           </div>
         </div>
@@ -290,8 +360,8 @@
             <img src="images/azr.jpeg" alt="Team Member 4">
           </div>
           <div>
-            <h5 class="fw-bold mb-1" style="color:#004990;">Ms. Neha Deshmukh</h5>
-            <p class="text-muted mb-2 fw-semibold">Quality Assurance Manager</p>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr Sayyed Anzar</h5>
+            <p class="text-muted mb-2 fw-semibold">IT Support</p>
             <p class="small text-secondary mb-0">
               Overseeing every batch to ensure unmatched purity and compliance with BP and USP standards.
             </p>
@@ -476,12 +546,14 @@
   </div>
 </section>
 
-<!-- Gallery Section -->
+<!-- 🌆 Gallery Section -->
 <section id="gallery" class="py-5" style="background-color:#f5f5f5;">
   <div class="container">
     <!-- Heading -->
     <h2 class="text-center mb-3 animate__animated animate__fadeInDown">Our Gallery</h2>
-    <p class="text-center mb-4 animate__animated animate__fadeIn">Explore our company's Factory, Office & Labs through images and videos.</p>
+    <p class="text-center mb-4 animate__animated animate__fadeIn">
+      Explore our company's Factory, Office & Labs through images and videos.
+    </p>
 
     <!-- Filter Buttons -->
     <div class="text-center mb-4">
@@ -493,14 +565,13 @@
 
     <!-- Media Grid -->
     <div class="row g-4" id="gallery-grid">
-      <!-- Factory Image -->
+      <!-- Example Items -->
       <div class="col-md-4 gallery-item" data-category="factory">
         <div class="card shadow-sm">
           <img src="images/bg2.jpg" class="card-img-top" alt="Factory 1">
         </div>
       </div>
 
-      <!-- Factory Video -->
       <div class="col-md-4 gallery-item" data-category="factory">
         <div class="card shadow-sm">
           <video class="card-img-top" muted loop autoplay playsinline>
@@ -509,14 +580,12 @@
         </div>
       </div>
 
-      <!-- Office Image -->
       <div class="col-md-4 gallery-item" data-category="office">
         <div class="card shadow-sm">
           <img src="images/bg4.jpg" class="card-img-top" alt="Office 1">
         </div>
       </div>
 
-      <!-- Office Video -->
       <div class="col-md-4 gallery-item" data-category="office">
         <div class="card shadow-sm">
           <video class="card-img-top" muted loop autoplay playsinline>
@@ -525,14 +594,12 @@
         </div>
       </div>
 
-      <!-- Labs Image -->
       <div class="col-md-4 gallery-item" data-category="labs">
         <div class="card shadow-sm">
           <img src="images/bg2.jpg" class="card-img-top" alt="Labs 1">
         </div>
       </div>
 
-      <!-- Labs Video -->
       <div class="col-md-4 gallery-item" data-category="labs">
         <div class="card shadow-sm">
           <video class="card-img-top" muted loop autoplay playsinline>
@@ -540,9 +607,77 @@
           </video>
         </div>
       </div>
+
+      <!-- Add more items here (they’ll be hidden initially) -->
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/bg3.jpg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="text-center mt-4">
+      <button id="viewMoreBtn" class="btn btn-warning px-4 fw-semibold rounded-pill shadow-sm">
+        View More
+      </button>
     </div>
   </div>
 </section>
+
+<!-- 🧠 SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const galleryItems = document.querySelectorAll("#gallery-grid .gallery-item");
+    const viewMoreBtn = document.getElementById("viewMoreBtn");
+    const itemsToShow = 6; // show first 6 only
+
+    // Initially hide extra items
+    galleryItems.forEach((item, index) => {
+      if (index >= itemsToShow) item.style.display = "none";
+    });
+
+    // Toggle view more / less
+    viewMoreBtn.addEventListener("click", () => {
+      const hiddenItems = Array.from(galleryItems).filter(item => item.style.display === "none");
+
+      if (hiddenItems.length > 0) {
+        // Show all
+        galleryItems.forEach(item => {
+          item.style.display = "block";
+          item.classList.add("animate__animated", "animate__fadeInUp");
+        });
+        viewMoreBtn.textContent = "View Less";
+      } else {
+        // Show only 6
+        galleryItems.forEach((item, index) => {
+          item.style.display = index < itemsToShow ? "block" : "none";
+        });
+        viewMoreBtn.textContent = "View More";
+      }
+    });
+  });
+</script>
+
+<!-- 🌈 Optional CSS -->
+<style>
+  #gallery-grid .card {
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #gallery-grid .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  #viewMoreBtn:hover {
+    background-color: #ffb400 !important;
+    box-shadow: 0 6px 16px rgba(255,180,0,0.4);
+  }
+</style>
+
 
 
 
